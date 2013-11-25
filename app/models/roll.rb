@@ -16,6 +16,7 @@ end
 def set_values
   self.dice_left ||= 6
   self.points ||= 0
+  self.hot_dice ||=0
 end  
 
 
@@ -29,31 +30,37 @@ end
       self.points = self.points + 1000
       array.pop(3)
       self.dice_left = self.dice_left - 3
+      self.hot_dice = self.hot_dice + 3
       score(array)
     elsif array.last(3) == [2,2,2]
       self.points = self.points + 200
       array.pop(3)
       self.dice_left = self.dice_left - 3
+      self.hot_dice = self.hot_dice + 3
       score(array)
     elsif array.last(3) == [3,3,3]
       self.points = self.points + 300
       array.pop(3)
       self.dice_left = self.dice_left - 3
+      self.hot_dice = self.hot_dice + 3
       score(array)
     elsif array.last(3) == [4,4,4]
       self.points = self.points + 400
       array.pop(3)
       self.dice_left = self.dice_left - 3
+      self.hot_dice = self.hot_dice + 3
       score(array)
     elsif array.last(3) == [5,5,5]
       self.points = self.points + 500
       array.pop(3)
       self.dice_left = self.dice_left - 3
+      self.hot_dice = self.hot_dice + 3
       score(array)
     elsif array.last(3) == [6,6,6]
       self.points = self.points + 600
       array.pop(3)
       self.dice_left = self.dice_left - 3
+      self.hot_dice = self.hot_dice + 3
       score(array)
     else 
       if array != []	
@@ -61,14 +68,18 @@ end
           self.dice_left = self.dice_left - 1
           if x == 5
     	    self.points = self.points +  50
+    	    self.hot_dice = self.hot_dice + 1
     	  elsif x == 1
     	    self.points = self.points +  100
+    	    self.hot_dice = self.hot_dice + 1
     	  end
         end 
       end    	    
     end 
     if starting_points == self.points 
     	self.points = 0
+    elsif self.hot_dice == 6
+        self.dice_left = 6	
     end
     self.save
     self.points

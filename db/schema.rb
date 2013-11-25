@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20131121184310) do
     t.integer  "points"
     t.integer  "score_id"
     t.integer  "dice_left"
+    t.integer  "hot_dice"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
