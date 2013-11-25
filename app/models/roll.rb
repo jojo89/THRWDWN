@@ -1,7 +1,6 @@
 class Roll < ActiveRecord::Base
     belongs_to :score
     has_one :game, through: :score
-	has_one :user, through: :score
     before_save :set_values
 
 def throw_dice
