@@ -22,18 +22,12 @@ ActiveRecord::Schema.define(version: 20131121184310) do
   create_table "rolls", force: true do |t|
     t.integer  "points"
     t.integer  "score_id"
-    t.integer  "dice_1"
-    t.integer  "dice_2"
-    t.integer  "dice_3"
-    t.integer  "dice_4"
-    t.integer  "dice_5"
-    t.integer  "dice_6"
+    t.integer  "dice_left"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "scores", force: true do |t|
-    t.string   "name"
     t.integer  "game_id"
     t.integer  "user_id"
     t.integer  "points"
