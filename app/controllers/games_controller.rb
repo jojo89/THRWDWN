@@ -5,6 +5,7 @@ class GamesController < ApplicationController
   end
 
   def create
+  	p params
    @game = Game.create
    redirect_to new_game_score_path(@game)
   end	

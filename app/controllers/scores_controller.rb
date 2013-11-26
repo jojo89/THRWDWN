@@ -1,8 +1,14 @@
 class ScoresController < ApplicationController
 
-def new
+  def new
+    @game = Game.find(params[:game_id])	
+    @score1 = Score.new 
+    @score2 = Score.new
+  end
 
-end
+  def create
+  	
+  end
 
 
 end	
