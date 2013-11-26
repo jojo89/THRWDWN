@@ -11,7 +11,10 @@ class RollsController < ApplicationController
   end	
 
   def show
+  	p params
+  	@roll = Roll.find(params[:id])
   	
+
   end	
 
 
