@@ -1,5 +1,6 @@
 $( document ).ready(function() {
     $('.nonselected').on('click',function(e){
+      console.log("hey");	
       $(this).toggleClass( 'selected')
     });     
 
@@ -15,7 +16,11 @@ $( document ).ready(function() {
       	console.log(response)
         $('#points').text(response.data);
         $.each(response.dice, function(index,value){
-          $('#points').after($("<img alt="+ value + "class=\"nonselected\" id=" + value +" src=\"/assets/" + value +".png\">"))
+          $('#points').after($("<img class=\"nonselected\" id=" + value +" src=\"/assets/" + value +".png\">"))
+          $('.nonselected').on('click',function(e){
+            console.log("hey");	
+            $(this).toggleClass( 'selected')
+          }); 
         }) ;
       });
     });
