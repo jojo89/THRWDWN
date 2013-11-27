@@ -20,7 +20,8 @@ class RollsController < ApplicationController
  def update
   @roll = Roll.find(params[:id])
   @score  =@roll.score(params[:data])
-  render :json => {:data => @score} 
+  @dice = @roll.throw_dice
+  render :json => {:data => @score, :dice => @dice} 
  end	
 
 

@@ -10,10 +10,13 @@ $( document ).ready(function() {
       $('.selected').each(function(){
         array.push($(this).attr('id'))
       });
-      $('.selected').remove();
-      console.log(array)
+      $('.nonselected').remove();
       $.post(url, {data:array},function(response){
+      	console.log(response)
         $('#points').text(response.data);
+        $.each(response.dice, function(index,value){
+          $('#points').after($("<img alt="+ value + "class=\"nonselected\" id=" + value +" src=\"/assets/" + value +".png\">"))
+        }) ;
       });
     });
 });
