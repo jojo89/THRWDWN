@@ -19,9 +19,8 @@ class RollsController < ApplicationController
 
  def update
   @roll = Roll.find(params[:id])
-  @roll.score(params[:data])
-  redirect_to game_score_roll_path(params[:game_id],params[:score_id],@roll)
-  
+  @score  =@roll.score(params[:data])
+  render :json => {:data => @score} 
  end	
 
 

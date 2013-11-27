@@ -13,7 +13,7 @@ $( document ).ready(function() {
       $('.selected').remove();
       console.log(array)
       $.post(url, {data:array},function(response){
-
+        $('#points').text(response.data);
       });
     });
 });
