@@ -22,6 +22,7 @@ end
 
 
   def score(array)
+    array = array.collect{|s| s.to_i}
     freq = array.inject(Hash.new(0)) { |h,v| h[v] += 1; h }
     array = array.sort_by { |v| freq[v] }
     starting_points = self.points
