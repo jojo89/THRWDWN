@@ -10,8 +10,8 @@ $( document ).ready(function() {
       $('.selected').each(function(){
         array.push($(this).attr('id'))
       });
+      $('.selected').remove();
       console.log(array)
- 
       $.post(url, {data:array},function(response){
 
       });

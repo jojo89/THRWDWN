@@ -20,8 +20,8 @@ class RollsController < ApplicationController
  def update
   @roll = Roll.find(params[:id])
   @roll.score(params[:data])
-  p @roll
-
+  redirect_to game_score_roll_path(params[:game_id],params[:score_id],@roll)
+  
  end	
 
 
