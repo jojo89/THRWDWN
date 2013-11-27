@@ -9,7 +9,9 @@ Throwdown::Application.routes.draw do
     resources :scores do
       resources :rolls
     end
-  end    
+  end  
+
+  post 'games/:game_id/scores/:score_id/rolls/:id' => "rolls#update"  
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

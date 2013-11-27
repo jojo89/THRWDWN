@@ -11,7 +11,6 @@ class RollsController < ApplicationController
   end	
 
   def show
-  	p params
   	@game = Game.find(params[:game_id])
   	@roll = Roll.find(params[:id])
   	@score = Score.find(params[:score_id])
@@ -21,6 +20,9 @@ class RollsController < ApplicationController
   	end
   end	
 
+ def update
+  p params
+ end	
 
 
 

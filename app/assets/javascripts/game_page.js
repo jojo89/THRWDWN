@@ -10,5 +10,10 @@ $( document ).ready(function() {
       $('.selected').each(function(){
         array.push($(this).attr('id'))
       });
+      console.log(array)
+ 
+      $.post(url, {data:array},function(response){
+
+      });
     });
 });
