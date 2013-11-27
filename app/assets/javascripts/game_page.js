@@ -1,12 +1,14 @@
 $( document ).ready(function() {
     $('.nonselected').on('click',function(e){
-    	$(this).removeClass('nonselected')
-    	$(this).addClass('selected')	
-    })
-    $('.edit_roll').on('click',function(e){
+      $(this).toggleClass( 'selected')
+    });     
 
+    $('.edit_roll').on('click',function(e){
       e.preventDefault();
       var url = $(this).attr("action")
-      console.log(url)
+      var array = []
+      $('.selected').each(function(){
+        array.push($(this).attr('id'))
+      });
     });
 });
