@@ -1,0 +1,7 @@
+.nonselected{
+	border:1px solid blue;
+}
+.selected{
+	border:1px solid red;
+}
+

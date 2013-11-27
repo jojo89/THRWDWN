@@ -4,5 +4,5 @@
 
 
 <% @dice.each do |d| %>
-  <%= image_tag(d.to_s + ".png")%>
+  <%= image_tag(d.to_s + ".png", class:"nonselected",id:d)%>
 <%end%>  
