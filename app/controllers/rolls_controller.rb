@@ -13,8 +13,10 @@ class RollsController < ApplicationController
   def show
   	p params
   	@roll = Roll.find(params[:id])
-  	
-
+  	@dice =[]
+  	@roll.dice_left.times do
+  	  	@dice << rand(1..6)
+  	end
   end	
 
 
