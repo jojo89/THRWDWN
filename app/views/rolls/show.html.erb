@@ -1,8 +1,8 @@
 
 
-
-
-
 <% @dice.each do |d| %>
   <%= image_tag(d.to_s + ".png", class:"nonselected",id:d)%>
 <%end%>  
+<%=form_for @roll, url: game_score_roll_path(@game,@score,@roll), method: :patch do |f|%>
+  <%= f.submit %>
+<%end%>
