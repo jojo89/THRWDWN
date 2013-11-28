@@ -7,3 +7,7 @@
 <%=form_for @roll,remote: true, url: game_score_roll_path(@game,@score,@roll), method: :patch do |f|%>
   <%= f.submit %>
 <%end%>
+
+<%=form_tag( '/finish/games/:game_id/scores/:score_id/rolls/:id')  do |f|%>
+  <%= f.submit %>
+<%end%>

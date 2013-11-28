@@ -22,6 +22,10 @@ class RollsController < ApplicationController
   @score  =@roll.score(params[:data])
   @dice = @roll.throw_dice
   render :json => {:data => @score, :dice => @dice} 
+ end
+
+ def finish_roll
+ 	
  end	
 
 
