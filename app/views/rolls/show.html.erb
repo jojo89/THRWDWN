@@ -8,6 +8,6 @@
   <%= f.submit %>
 <%end%>
 
-<%=form_tag( '/finish/games/:game_id/scores/:score_id/rolls/:id')  do |f|%>
-  <%= f.submit %>
+<%=form_for @roll, url: finish_path(@game,@score,@roll)  do |f|%>
+  <%= f.submit(value:"finish turn") %>
 <%end%>
