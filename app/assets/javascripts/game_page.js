@@ -18,7 +18,6 @@ $( document ).ready(function() {
         $.each(response.dice, function(index,value){
           $('#points').after($("<img class=\"nonselected\" id=" + value +" src=\"/assets/" + value +".png\">"))
           $('.nonselected').on('click',function(e){
-            console.log("hey");	
             $(this).toggleClass( 'selected')
           }); 
         }) ;
