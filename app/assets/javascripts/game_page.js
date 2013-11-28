@@ -9,14 +9,14 @@ $( document ).ready(function() {
       var url = $(this).attr("action")
       var array = []
       $('.selected').each(function(){
-        array.push($(this).attr('id'))
+        array.push($(this).attr('value'));
       });
       $('.nonselected').remove();
       $.post(url, {data:array},function(response){
       	console.log(response)
         $('#points').text(response.data);
         $.each(response.dice, function(index,value){
-          $('#points').after($("<img class=\"nonselected\" id=" + value +" src=\"/assets/" + value +".png\">"))
+          $('#points').after($("<img class=\"nonselected\" value=" + value +" src=\"/assets/" + value +".png\">"))
           $('.nonselected').on('click',function(e){
             $(this).toggleClass( 'selected')
           }); 

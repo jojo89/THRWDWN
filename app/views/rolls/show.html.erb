@@ -2,7 +2,7 @@
 <p id="points">0</p>
 
 <% @dice.each do |d| %>
-  <%= image_tag(d.to_s + ".png", class:"nonselected",id:d)%>
+  <%= image_tag(d.to_s + ".png", class:"nonselected",value:d)%>
 <%end%>  
 <%=form_for @roll,remote: true, url: game_score_roll_path(@game,@score,@roll), method: :patch do |f|%>
   <%= f.submit %>
