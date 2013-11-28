@@ -11,16 +11,12 @@ $( document ).ready(function() {
       $('.selected').each(function(){
         array.push($(this).attr('value'));
       });
-      $('.nonselected').remove();
+      $('.selected').remove();
       $.post(url, {data:array},function(response){
-      	console.log(response)
         $('#points').text(response.data);
-        $.each(response.dice, function(index,value){
-          $('#points').after($("<img class=\"nonselected\" value=" + value +" src=\"/assets/" + value +".png\">"))
-          $('.nonselected').on('click',function(e){
-            $(this).toggleClass( 'selected')
-          }); 
-        }) ;
+        $('.nonselected').each(function(index,element){
+         $(this).attr('value',response.dice[index]);
+        }); 
       });
     });
 });
