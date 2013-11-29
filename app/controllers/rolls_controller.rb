@@ -24,11 +24,13 @@ class RollsController < ApplicationController
   render :json => {:data => @score, :dice => @dice} 
  end
 
- def finish_roll
- 	
+ def finished
+   @roll = Roll.find(params[:id])
+   @score = Score.find(params[:score_id])
+   @game = Game.find(params[:game_id])
+   @score.points = @score.points + @roll.points
+   @score.save
  end	
-
-
 
 
 end	
