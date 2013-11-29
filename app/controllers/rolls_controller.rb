@@ -20,9 +20,13 @@ class RollsController < ApplicationController
 
  def update
   @roll = Roll.find(params[:id])
+  p "jjjjjjjjjjjjjjjjjjjjjjjjjj"
+  p params[:data]
+  p 'jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj'
   @score  =@roll.count_up(params[:data])
+
   if @score == 0
-    
+    p "nope wrong"
   else
     @dice = @roll.throw_dice
     render :json => {:data => @score, :dice => @dice} 

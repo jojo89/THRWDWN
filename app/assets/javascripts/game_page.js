@@ -16,6 +16,8 @@ $( document ).ready(function() {
         $('#points').text(response.data);
         $('.nonselected').each(function(index,element){
          $(this).attr('value',response.dice[index]);
+         $(this).attr('alt',response.dice[index]);
+         $(this).attr('src',"/assets/" + response.dice[index]+ ".png");
         }); 
       });
     });
