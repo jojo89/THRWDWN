@@ -15,13 +15,18 @@ class RollsController < ApplicationController
   	@roll = Roll.find(params[:id])
   	@score = Score.find(params[:score_id])
   	@dice = @roll.throw_dice
+
   end	
 
  def update
   @roll = Roll.find(params[:id])
-  @score  =@roll.score(params[:data])
-  @dice = @roll.throw_dice
-  render :json => {:data => @score, :dice => @dice} 
+  @score  =@roll.count_up(params[:data])
+  if @score == 0
+    
+  else
+    @dice = @roll.throw_dice
+    render :json => {:data => @score, :dice => @dice} 
+  end  
  end
 
  def finished
@@ -29,7 +34,9 @@ class RollsController < ApplicationController
    @score = Score.find(params[:score_id])
    @game = Game.find(params[:game_id])
    @score.points = @score.points + @roll.points
+   
    @score.save
+
  end	
 
 
