@@ -25,43 +25,44 @@ end
     array = array.collect{|s| s.to_i}
     freq = array.inject(Hash.new(0)) { |h,v| h[v] += 1; h }
     array = array.sort_by { |v| freq[v] }
-    starting_points = self.points
     if array.last(3) == [1,1,1]
+      p self.points
       self.points = self.points + 1000
+      p self.points
       array.pop(3)
       self.dice_left = self.dice_left - 3
       self.hot_dice = self.hot_dice + 3
-      score(array)
+      count_up(array)
     elsif array.last(3) == [2,2,2]
       self.points = self.points + 200
       array.pop(3)
       self.dice_left = self.dice_left - 3
       self.hot_dice = self.hot_dice + 3
-      score(array)
+      count_up(array)
     elsif array.last(3) == [3,3,3]
       self.points = self.points + 300
       array.pop(3)
       self.dice_left = self.dice_left - 3
       self.hot_dice = self.hot_dice + 3
-      score(array)
+      count_up(array)
     elsif array.last(3) == [4,4,4]
       self.points = self.points + 400
       array.pop(3)
       self.dice_left = self.dice_left - 3
       self.hot_dice = self.hot_dice + 3
-      score(array)
+      count_up(array)
     elsif array.last(3) == [5,5,5]
       self.points = self.points + 500
       array.pop(3)
       self.dice_left = self.dice_left - 3
       self.hot_dice = self.hot_dice + 3
-      score(array)
+      count_up(array)
     elsif array.last(3) == [6,6,6]
       self.points = self.points + 600
       array.pop(3)
       self.dice_left = self.dice_left - 3
       self.hot_dice = self.hot_dice + 3
-      score(array)
+      count_up(array)
     else 
       if array != []	
         array.each do |x|
@@ -76,11 +77,11 @@ end
         end 
       end    	    
     end 
-    if starting_points == self.points 
-    	self.points = 0
-    elsif self.hot_dice == 6
-        self.dice_left = 6	
-    end
+    # if starting_points == self.points 
+    # 	self.points = 0
+    # elsif self.hot_dice == 6
+    #     self.dice_left = 6	
+    # end
     self.save
     self.points
   end	

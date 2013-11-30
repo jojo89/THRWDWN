@@ -14,11 +14,21 @@ $( document ).ready(function() {
       $('.selected').remove();
       $.post(url, {data:array},function(response){
         $('#points').text(response.data);
-        $('.nonselected').each(function(index,element){
-         $(this).attr('value',response.dice[index]);
-         $(this).attr('alt',response.dice[index]);
-         $(this).attr('src',"/assets/" + response.dice[index]+ ".png");
-        }); 
+        console.log(response.dice.length)
+      	if(response.dice.length == 0)
+      	{
+      	  $('#edit_roll').remove();
+        }
+        else
+        {
+          $('.nonselected').each(function(index,element){
+            $(this).attr('value',response.dice[index]);
+            $(this).attr('alt',response.dice[index]);
+            $(this).attr('src',"/assets/" + response.dice[index]+ ".png");
+          }); 
+
+        } 
+
       });
     });
 });
