@@ -1,4 +1,12 @@
 $( document ).ready(function() {
+    $('#cheat').on('click',function(e){	
+      $('.nonselected').each(function(index,element){
+        var rand = Math.floor((Math.random()*6)+1).toString();	
+        $(this).attr('value',rand);
+        $(this).attr('alt',rand);
+        $(this).attr('src',"/assets/" + rand  + ".png");
+      }); 
+    });     
 	numberOfDice = $('.nonselected').length
     $('.nonselected').on('click',function(e){	
       $(this).toggleClass( 'selected')
@@ -46,16 +54,25 @@ $( document ).ready(function() {
             });   
       	  });
       	}
-        var url = $(this).attr("action")
-        $.get(url,null,function(response){
-          $('.nonselected').each(function(index,element){
-            $(this).attr('value',response.dice[index]);
-            $(this).attr('alt',response.dice[index]);
-            $(this).attr('src',"/assets/" + response.dice[index]+ ".png");
-          }); 
-        });
+      	else
+      	{
+          var url = $(this).attr("action")
+          $.get(url,null,function(response){
+            $('.nonselected').each(function(index,element){
+              $(this).attr('value',response.dice[index]);
+              $(this).attr('alt',response.dice[index]);
+              $(this).attr('src',"/assets/" + response.dice[index]+ ".png");
+            }); 
+          });
+        }
       	
       }
     });
 });
 
+            $('.nonselected').each(function(index,element){
+              var rand = Math.floor((Math.random()*6)+1).toString();	
+              $(this).attr('value',rand);
+              $(this).attr('alt',rand);
+              $(this).attr('src',"/assets/" + rand  + ".png");
+            }); 

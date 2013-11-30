@@ -81,6 +81,7 @@ end
     # 	self.points = 0
     if self.hot_dice == 6
         self.dice_left = 6	
+        self.hot_dice = 0
     end
     self.save
     self.points
