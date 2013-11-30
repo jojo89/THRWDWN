@@ -73,18 +73,24 @@ end
     	  elsif x == 1
     	    self.points = self.points +  100
     	    self.hot_dice = self.hot_dice + 1
+        else 
+          @remainder =true  
     	  end
         end 
       end    	    
     end 
-    # if starting_points == self.points 
-    # 	self.points = 0
     if self.hot_dice == 6
         self.dice_left = 6	
         self.hot_dice = 0
     end
-    self.save
+    if @remainder == true
+      p @remainder
+    else
+      self.save
+      self.points
+    end  
     self.points
+
   end	
 
  

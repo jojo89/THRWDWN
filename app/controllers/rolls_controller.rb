@@ -25,14 +25,16 @@ class RollsController < ApplicationController
  def update
   @roll = Roll.find(params[:id])
   first_value = @roll.points
-  @score  =@roll.count_up(params[:data])
+  @score  = @roll.count_up(params[:data])
   updated_value = @roll.points
-  if first_value == updated_value
+  p @roll.changed?
+  if first_value == updated_value || @roll.changed? == true
   	@different = false
+    render :json => {:data => @roll.points_was, :updated => @different }
   else
   	@different = true
+    render :json => {:data => @score, :updated => @different }
   end
-  render :json => {:data => @score, :updated => @different }
  end
 
  def finished
