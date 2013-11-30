@@ -14,9 +14,7 @@ class RollsController < ApplicationController
     @game = Game.find(params[:game_id])
   	@roll = Roll.find(params[:id])
   	@score = Score.find(params[:score_id])
-  	p @r
   	@dice = @roll.throw_dice
-  	p @dice
     if request.xhr?
       render :json => {:dice => @dice }
     else
@@ -28,8 +26,6 @@ class RollsController < ApplicationController
   @roll = Roll.find(params[:id])
   first_value = @roll.points
   @score  =@roll.count_up(params[:data])
-  p @roll.hot_dice
-  p @roll.dice_left
   updated_value = @roll.points
   if first_value == updated_value
   	@different = false
@@ -40,7 +36,6 @@ class RollsController < ApplicationController
  end
 
  def finished
-   p params
    @roll = Roll.find(params[:id])
    @score = Score.find(params[:score_id])
    @game = Game.find(params[:game_id])
@@ -56,7 +51,6 @@ class RollsController < ApplicationController
 
  def new_dice
    @dice = [rand(1..6),rand(1..6),rand(1..6),rand(1..6),rand(1..6),rand(1..6)]
-
    render :partial => 'new_dice'
  end	
 
