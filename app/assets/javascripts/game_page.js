@@ -1,4 +1,5 @@
 $( document ).ready(function() {
+	numberOfDice = $('.nonselected').length
     $('.nonselected').on('click',function(e){
       console.log("hey");	
       $(this).toggleClass( 'selected')
@@ -21,12 +22,13 @@ $( document ).ready(function() {
     ///when fetching new dice/////
     $('.new_dice').on('click', function(e){
       e.preventDefault	
-      if($('.nonselected').length == 6)
+      if($('.nonselected').length == numberOfDice)
       {
         $('#points').text("You must score at least one dice per turn");
       }
       else
       {
+      	numberOfDice = $('.nonselected').length
         var url = $(this).attr("action")
         $.get(url,null,function(response){
           $('.nonselected').each(function(index,element){
