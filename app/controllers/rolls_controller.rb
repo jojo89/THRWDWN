@@ -36,13 +36,19 @@ class RollsController < ApplicationController
  end
 
  def finished
+   p params
    @roll = Roll.find(params[:id])
    @score = Score.find(params[:score_id])
    @game = Game.find(params[:game_id])
-   @score.points = @score.points + @roll.points
-   
+   if params[:scored_points] == "true"
+     @score.points = @score.points + @roll.points
+   else
+   	 @roll.points = 0
+   	 @roll.save
+   end
    @score.save
-
+   p @score
+   p @roll
  end	
 
 
