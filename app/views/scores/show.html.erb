@@ -1,5 +1,5 @@
 <h1>It's your turn <%= @score.name%></h1>
-<p id="points">0</p>
+<p id="points"><%= @score.points%></p>
 <%= form_for [@game,@score,@roll] do |f|%>
   <%= f.submit %>
 <%end%>	 

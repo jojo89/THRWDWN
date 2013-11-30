@@ -41,7 +41,10 @@ class RollsController < ApplicationController
    @roll = Roll.find(params[:id])
    @score = Score.find(params[:score_id])
    @game = Game.find(params[:game_id])
-   duplicate = @game.scores.dup.delete(@score).first
+   duplicate = @game.scores.all
+   duplicate.delete(@score)
+   p @game.scores
+   next_player = duplicate.first
    if params[:scored_points] == "true"
      @score.points = @score.points + @roll.points
    else
@@ -49,7 +52,7 @@ class RollsController < ApplicationController
    	 @roll.save
    end
    @score.save
-   redirect_to game_score_path(@game,duplicate)
+   redirect_to game_score_path(@game,next_player)
  end
 
 
