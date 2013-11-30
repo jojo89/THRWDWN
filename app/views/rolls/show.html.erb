@@ -4,11 +4,16 @@
 <% @dice.each do |d| %>
   <%= image_tag(d.to_s + ".png", class:"nonselected",value:d)%>
 <%end%>  
+
 <%=form_for @roll,remote: true, url: game_score_roll_path(@game,@score,@roll), method: :patch do |f|%>
   <%= f.submit %>
 <%end%>
 
-<%=form_tag(finish_path(@game,@score,@roll)) do %>
+<%=form_tag(game_score_roll_path(@game,@score,@roll), method: :get) do %>
+  <%= submit_tag("Roll Again")%>
+<%end%>
+
+<%=form_tag(finish_path(@game,@score,@roll),id:"new_dice") do %>
   <%= submit_tag("Finish Turn")%>
 <%end%>
 

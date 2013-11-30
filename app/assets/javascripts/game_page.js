@@ -14,21 +14,25 @@ $( document ).ready(function() {
       $('.selected').remove();
       $.post(url, {data:array},function(response){
         $('#points').text(response.data);
-        console.log(response.dice.length)
-      	if(response.dice.length == 0)
-      	{
-      	  $('#edit_roll').remove();
-        }
-        else
-        {
-          $('.nonselected').each(function(index,element){
-            $(this).attr('value',response.dice[index]);
-            $(this).attr('alt',response.dice[index]);
-            $(this).attr('src',"/assets/" + response.dice[index]+ ".png");
-          }); 
-
-        } 
-
+      });
+    });
+    $('#new_dice').on('click', function(){
+      var url = $(this).attr("action")
+      $.get(url,null,function(response){
+        $('.nonselected').each(function(index,element){
+          $(this).attr('value',response.dice[index]);
+          $(this).attr('alt',response.dice[index]);
+          $(this).attr('src',"/assets/" + response.dice[index]+ ".png");
+        }); 
       });
     });
 });
+
+// {
+//       	  $('#edit_roll').remove();
+//         }
+//         else
+//         {
+
+
+//         } 
