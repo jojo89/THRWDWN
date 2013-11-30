@@ -26,6 +26,7 @@ class RollsController < ApplicationController
   @roll = Roll.find(params[:id])
   first_value = @roll.points
   @score  =@roll.count_up(params[:data])
+  p @roll.dice_left
   updated_value = @roll.points
   if first_value == updated_value
   	@different = false
@@ -47,9 +48,15 @@ class RollsController < ApplicationController
    	 @roll.save
    end
    @score.save
-   p @score
-   p @roll
+ end
+
+
+ def new_dice
+   @dice = [rand(1..6),rand(1..6),rand(1..6),rand(1..6),rand(1..6),rand(1..6)]
+
+   render :partial => 'new_dice'
  end	
+
 
 
 end	

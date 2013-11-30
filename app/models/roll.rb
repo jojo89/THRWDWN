@@ -79,9 +79,9 @@ end
     end 
     # if starting_points == self.points 
     # 	self.points = 0
-    # elsif self.hot_dice == 6
-    #     self.dice_left = 6	
-    # end
+    if self.hot_dice == 6
+        self.dice_left = 6	
+    end
     self.save
     self.points
   end	

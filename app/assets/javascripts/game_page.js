@@ -38,6 +38,12 @@ $( document ).ready(function() {
       {
         $('#scored_points').val('false')
       	numberOfDice = $('.nonselected').length
+      	if(numberOfDice == 0)
+      	{
+      	  $.get("/dice",null,function(response){
+            $('#points').after(response);
+      	  });
+      	}
         var url = $(this).attr("action")
         $.get(url,null,function(response){
           $('.nonselected').each(function(index,element){

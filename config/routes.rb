@@ -12,7 +12,8 @@ Throwdown::Application.routes.draw do
   end  
 
   post 'games/:game_id/scores/:score_id/rolls/:id' => "rolls#update"  
-
+  
+  get 'dice' => 'rolls#new_dice'
   
   # Example of regular route:
 #     get '/:id' => 'catalog#view'
