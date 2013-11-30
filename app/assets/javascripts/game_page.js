@@ -14,7 +14,7 @@ $( document ).ready(function() {
       });
       $.post(url, {data:array},function(response){
         $('#points').text(response.data);
-        if(response.data == "0")
+        if(response.updated == false)
         {
           
         }
