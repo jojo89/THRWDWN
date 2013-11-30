@@ -20,6 +20,7 @@ $( document ).ready(function() {
         }
         else
         {
+          $('#scored_points').val('true')
           $('.selected').remove();
         }
       });
@@ -35,6 +36,7 @@ $( document ).ready(function() {
       }
       else
       {
+        $('#scored_points').val('false')
       	numberOfDice = $('.nonselected').length
         var url = $(this).attr("action")
         $.get(url,null,function(response){
