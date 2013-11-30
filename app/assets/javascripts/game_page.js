@@ -16,23 +16,27 @@ $( document ).ready(function() {
         $('#points').text(response.data);
       });
     });
-    $('#new_dice').on('click', function(){
-      var url = $(this).attr("action")
-      $.get(url,null,function(response){
-        $('.nonselected').each(function(index,element){
-          $(this).attr('value',response.dice[index]);
-          $(this).attr('alt',response.dice[index]);
-          $(this).attr('src',"/assets/" + response.dice[index]+ ".png");
-        }); 
+
+
+    ///when fetching new dice/////
+    $('.new_dice').on('click', function(e){
+      e.preventDefault	
+      if($('.nonselected').length == 6)
+      {
+        $('#points').text("You must score at least one dice per turn");
+      }
+      else
+      {
+        var url = $(this).attr("action")
+        $.get(url,null,function(response){
+          $('.nonselected').each(function(index,element){
+            $(this).attr('value',response.dice[index]);
+            $(this).attr('alt',response.dice[index]);
+            $(this).attr('src',"/assets/" + response.dice[index]+ ".png");
+          }); 
       });
+      	
+      }
     });
 });
 
-// {
-//       	  $('#edit_roll').remove();
-//         }
-//         else
-//         {
-
-
-//         } 

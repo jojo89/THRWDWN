@@ -9,11 +9,11 @@
   <%= f.submit %>
 <%end%>
 
-<%=form_tag(game_score_roll_path(@game,@score,@roll), method: :get) do %>
+<%=form_tag(game_score_roll_path(@game,@score,@roll),class:"new_dice", method: :get,remote: true) do %>
   <%= submit_tag("Roll Again")%>
 <%end%>
 
-<%=form_tag(finish_path(@game,@score,@roll),id:"new_dice") do %>
+<%=form_tag(finish_path(@game,@score,@roll)) do %>
   <%= submit_tag("Finish Turn")%>
 <%end%>
 
