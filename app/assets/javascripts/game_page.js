@@ -1,7 +1,6 @@
 $( document ).ready(function() {
 	numberOfDice = $('.nonselected').length
-    $('.nonselected').on('click',function(e){
-      console.log("hey");	
+    $('.nonselected').on('click',function(e){	
       $(this).toggleClass( 'selected')
     });     
 
@@ -42,6 +41,9 @@ $( document ).ready(function() {
       	{
       	  $.get("/dice",null,function(response){
             $('#points').after(response);
+            $('.nonselected').on('click',function(e){	
+              $(this).toggleClass( 'selected')
+            });   
       	  });
       	}
         var url = $(this).attr("action")
