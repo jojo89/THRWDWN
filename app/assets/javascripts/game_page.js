@@ -12,9 +12,16 @@ $( document ).ready(function() {
       $('.selected').each(function(){
         array.push($(this).attr('value'));
       });
-      $('.selected').remove();
       $.post(url, {data:array},function(response){
         $('#points').text(response.data);
+        if(response.data == "0")
+        {
+          
+        }
+        else
+        {
+          $('.selected').remove();
+        }
       });
     });
 
@@ -36,7 +43,7 @@ $( document ).ready(function() {
             $(this).attr('alt',response.dice[index]);
             $(this).attr('src',"/assets/" + response.dice[index]+ ".png");
           }); 
-      });
+        });
       	
       }
     });
