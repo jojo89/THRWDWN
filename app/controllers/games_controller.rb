@@ -5,8 +5,8 @@ class GamesController < ApplicationController
   end
 
   def create
-  	p params
-   @game = Game.create
+   score = params["game"]["finishing_score"]
+   @game = Game.create(:finishing_score => score.to_i)
    redirect_to new_game_score_path(@game)
   end	
 
