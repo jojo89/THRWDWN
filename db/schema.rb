@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20131121182032) do
 
   create_table "games", force: true do |t|
     t.boolean  "ended"
+    t.integer  "finishing_score"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
