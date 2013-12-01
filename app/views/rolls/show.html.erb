@@ -1,5 +1,6 @@
 <h1>It's your turn <%= @score.name%></h1>
 <p id="points">0</p>
+<p id="total"><%= @score.points%></p>
 
 <% @dice.each do |d| %>
   <%= image_tag(d.to_s + ".png", class:"nonselected",value:d)%>

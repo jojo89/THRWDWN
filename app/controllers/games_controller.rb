@@ -1,8 +1,11 @@
 class GamesController < ApplicationController
 
   def show
-
-  
+   @game = Game.find(params[:id])
+   @scores = @game.scores
+   @score1 = @scores.first
+   @score2 = @scores[1]
+   
   end	
 
 
