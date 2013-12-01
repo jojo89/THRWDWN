@@ -52,7 +52,11 @@ class RollsController < ApplicationController
    	 @roll.save
    end
    @score.save
-   redirect_to game_score_path(@game,next_player)
+   if @score.points >= @game.finishing_score
+     redirect_to game_path(@game)
+   else	
+     redirect_to game_score_path(@game,next_player)
+   end  
  end
 
 
