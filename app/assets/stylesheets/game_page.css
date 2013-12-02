@@ -6,11 +6,29 @@
   top:100px;
 }
 
+.container_dice {
+  margin: 20px auto;
+  width: 950px;
+  padding: 0px 20px 20px 20px;
+  position: relative;
+  top: 100px;
+}
+
 .names {
 margin-top: 80px;
 }
 
-.container input {
+.total p {
+display: inline;
+margin-right: 33px;
+}
+#total {
+position: absolute;
+right: 302px;
+top: 76px;
+}
+
+.container input, .container_dice input {
 background: rgb(255, 56, 56);
 color: white;
 font-family: 'Open Sans', sans-serif;
@@ -25,6 +43,7 @@ height: 34px;
 
 .nonselected{
 	border:1px solid blue;
+	margin: 7px 18px;
 }
 .selected{
 	border:1px solid red;
@@ -36,6 +55,11 @@ height: 34px;
   background: -webkit-linear-gradient(#FF0F0F, #F5D909);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+#player_prompt {
+  position: absolute;
+  top: 50px;
 }
 
 #save_names {

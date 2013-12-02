@@ -1,8 +1,10 @@
-<div class="container">
-  <h1>It's your turn <%= @score.name%></h1>
-  <p id="points">0</p>
-  <p id="total"><%= @score.points%></p>
-
+<p id="total">Your current total is <%= @score.points%></p>
+<h3 id="player_prompt">It's your turn <%= @score.name%></h3>
+<div class="container_dice">
+  <div class="total">
+    <p id="points">Your current role score <%= @roll.points%></p>
+ 
+  </div>
   <% @dice.each do |d| %>
   <%= image_tag(d.to_s + ".png", class:"nonselected",value:d)%>
   <%end%>  
