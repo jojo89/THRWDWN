@@ -1,3 +1,28 @@
+.container {
+  margin: 20px auto;
+  width: 600px;
+  padding: 0px 20px 20px 20px;
+  position: relative;
+  top:100px;
+}
+
+.names {
+margin-top: 80px;
+}
+
+.container input {
+background: rgb(255, 56, 56);
+color: white;
+font-family: 'Open Sans', sans-serif;
+width: 150px;
+padding: 5px;
+font-size: 16px;
+line-height: 1;
+border:none;
+height: 34px;
+-webkit-appearance: none;
+}
+
 .nonselected{
 	border:1px solid blue;
 }
@@ -5,9 +30,66 @@
 	border:1px solid red;
 }
 
+#banner {
+  font-size: 106px;
+  text-align: center;
+  background: -webkit-linear-gradient(#FF0F0F, #F5D909);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#save_names {
+  position: absolute;
+  float: right;
+  bottom: 121px;
+  left: 352px;
+}
+
+
+
+.front select {
+   background: red;
+   color:white;
+   font-family: 'Open Sans', sans-serif;
+   width: 268px;
+   padding: 5px;
+   font-size: 16px;
+   line-height: 1;
+   border: 0;
+   border-radius: 0;
+   height: 34px;
+   -webkit-appearance: none;
+ }
+
+ .front input {
+   background: rgb(184, 184, 184);
+   color:white;
+   font-family: 'Open Sans', sans-serif;
+   width: 150px;
+   padding: 5px;
+   font-size: 16px;
+   line-height: 1;
+   border: 0;
+   border-radius: 0;
+   height: 34px;
+   -webkit-appearance: none;
+ }
+
 /* ========= NAV ========================*/
 body{
   font-family: 'Open Sans', sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+padding-bottom: 38px;
+}
+
+label{
+	padding-right: 30px;
 }
 
 
@@ -30,7 +112,9 @@ nav h1 {
   margin: 10px 0;
   padding: 0;
   float: left;
-  color: #FFFFFF;
+  background: -webkit-linear-gradient(#FF0F0F, #F5D909);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-size: 28px;
 }
 
@@ -41,12 +125,16 @@ nav ul {
 
 nav ul li {
   display: inline-block;
-  color: #FFFFFF;
+  background: -webkit-linear-gradient(#FF0F0F, #F5D909);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   margin: 0 20px;
 }
 
 nav ul li a {
-  color: #FFFFFF;
+   background: -webkit-linear-gradient(#FF0F0F, #F5D909);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   text-decoration: none;
 
 }

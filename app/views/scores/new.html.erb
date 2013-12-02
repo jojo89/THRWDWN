@@ -1,6 +1,18 @@
-<%= form_tag(game_scores_path) do %>
+<div class="container">
+  <div class="names">
+  <%= form_tag(game_scores_path) do %>
+    <ul>
+    <li>
+    <%= label_tag "Player 1" %>
     <%= text_field_tag :name1 %>
+    </li>
+    <li>
+    <%= label_tag "Player 2" %>
     <%= text_field_tag :name2 %>
+    </li>
     <%= hidden_field_tag(:game_id, @game.id) %>
-	<%= submit_tag %>
-<% end %>	
+	<%= submit_tag("Start Game", id: "save_names") %>
+	</ul>
+  <% end %>	
+  </div>  
+</div>

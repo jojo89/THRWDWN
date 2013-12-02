@@ -1,5 +1,10 @@
-<h1>Welcome</h1>
-<%= form_for @game do |f|%>
+<div class="container">
+  <h1 id="banner">Hot Dice</h1>
+  <div class="front">
+  <%= form_for @game do |f|%>
+    <%= f.label :finishing_score%>
     <%= f.select :finishing_score, options_for_select([1000,2000,5000,10000,20000,50000]) %>
-	<%= f.submit %>
-<% end %>	
+    <%= f.submit %>
+  <% end %>
+  </div>
+</div>	
