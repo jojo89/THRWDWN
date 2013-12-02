@@ -1,5 +1,5 @@
 <h1>Welcome</h1>
 <%= form_for @game do |f|%>
-    <%= f.select :finishing_score, options_for_select([10000,20000,30000,50000]) %>
+    <%= f.select :finishing_score, options_for_select([1000,2000,5000,10000,20000,50000]) %>
 	<%= f.submit %>
 <% end %>	

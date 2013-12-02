@@ -3,11 +3,14 @@ class GamesController < ApplicationController
   def show
    @game = Game.find(params[:id])
    @scores = @game.scores
-   @score1 = @scores.first
+   @score1 = @scores[0]
    @score2 = @scores[1]
-   
+   @roll1 = @score1.rolls
+   @roll2 = @score2.rolls 
+   count = @score1.rolls.length
+   @count = count - 1
+   p @count 
   end	
-
 
   def new
 	@game = Game.new
