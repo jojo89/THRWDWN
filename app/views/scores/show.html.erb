@@ -1,5 +1,7 @@
-<h1>It's your turn <%= @score.name%></h1>
-<p id="points"><%= @score.points%></p>
-<%= form_for [@game,@score,@roll] do |f|%>
-  <%= f.submit %>
-<%end%>	 
+<div class="container">
+  <h1>It's your turn <%= @score.name%></h1>
+  <p id="points">Your current total is <%= @score.points%> points</p>
+  <%= form_for [@game,@score,@roll] do |f|%>
+  <%= f.submit("Roll!") %>
+  <%end%>	 
+</div>
