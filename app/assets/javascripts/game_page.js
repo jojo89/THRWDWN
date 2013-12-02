@@ -49,6 +49,7 @@ $( document ).ready(function() {
       	{
       	  $.get("/dice",null,function(response){
             $('#points').after(response);
+            numberOfDice = $('.nonselected').length
             $('.nonselected').on('click',function(e){	
               $(this).toggleClass( 'selected')
             });   
