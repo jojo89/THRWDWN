@@ -1,10 +1,11 @@
-<h1>game stats</h1>
-<table>
-  <tr>
-    <th><%= @score1.name%></th>
-    <th><%= @score2.name %></th>
-  </tr>	
-  <% 0.upto(@count) do |i| %>
+<div class="container_stats">
+  <h1>game stats</h1>
+  <table>
+    <tr>
+      <th><%= @score1.name%></th>
+      <th><%= @score2.name %></th>
+    </tr>	
+    <% 0.upto(@count) do |i| %>
   
    <tr>
    <%if @roll1[i] != nil %>
@@ -21,3 +22,4 @@
     <th><%= @score2.points %></th>
   </tr> 
 </table>
+</div>
