@@ -48,7 +48,7 @@ $( document ).ready(function() {
       	if(numberOfDice == 0)
       	{
       	  $.get("/dice",null,function(response){
-            $('#points').after(response);
+            $('.container_dice').prepend(response);
             numberOfDice = $('.nonselected').length
             $('.nonselected').on('click',function(e){	
               $(this).toggleClass( 'selected')
