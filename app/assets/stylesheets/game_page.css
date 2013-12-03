@@ -24,6 +24,10 @@
 padding: 0px 22px;
 }
 
+.container_stats h1 {
+  font-size: 40px;
+}
+
 .container_dice {
   margin: 20px auto;
   width: 950px;
