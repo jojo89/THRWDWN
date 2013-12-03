@@ -15,6 +15,9 @@ class RollsController < ApplicationController
   	@roll = Roll.find(params[:id])
   	@score = Score.find(params[:score_id])
   	@dice = @roll.throw_dice
+    duplicate = @game.scores.all
+    duplicate.delete(@score)
+    @next_player = duplicate.first
     if request.xhr?
       render :json => {:dice => @dice }
     else
@@ -43,7 +46,6 @@ class RollsController < ApplicationController
    @game = Game.find(params[:game_id])
    duplicate = @game.scores.all
    duplicate.delete(@score)
-   p @game.scores
    next_player = duplicate.first
    if params[:scored_points] == "true"
      @score.points = @score.points + @roll.points
