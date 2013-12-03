@@ -27,9 +27,9 @@ margin-right: 33px;
 #points {
 display: inline;
 top: 60px;
-left:90px;
+left: 15px;
 position: fixed;
-font-size: 130px;
+font-size: 125px;
 }
 
 .score_board {
@@ -52,12 +52,15 @@ margin-bottom: 5px;
 -webkit-appearance: none;
 }
 
-.nonselected{
-	border:1px solid blue;
-	margin: 7px 18px;
+.nonselected {
+border: 5px solid blue;
+border-radius: 33px;
+margin: 7px 18px;
 }
 .selected{
-	border:1px solid red;
+  border: 5px solid red;
+  border-radius: 33px;
+  margin: 7px 18px;
 }
 
 #banner {
