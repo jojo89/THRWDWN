@@ -17,6 +17,11 @@
 
 .container_stats table{
   margin:auto;
+  font-size:35px;
+}
+
+.container_stats th {
+padding: 0px 22px;
 }
 
 .container_dice {
