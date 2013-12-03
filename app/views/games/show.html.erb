@@ -2,12 +2,14 @@
   <h1>game stats</h1>
   <table>
     <tr>
+      <th></th>
       <th><%= @score1.name%></th>
       <th><%= @score2.name %></th>
     </tr>	
     <% 0.upto(@count) do |i| %>
   
    <tr>
+     <td>Roll <%= i%></td>
    <%if @roll1[i] != nil %>
       <td><%= @roll1[i].points%></td>
    <%end%>
@@ -18,6 +20,7 @@
     </tr>
   <%end%> 
   <tr>
+    <th></th>
     <th><%= @score1.points%></th>
     <th><%= @score2.points %></th>
   </tr> 
