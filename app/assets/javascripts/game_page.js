@@ -1,5 +1,6 @@
 $( document ).ready(function() {
     $('#cheat').on('click',function(e){	
+
       $('.nonselected').each(function(index,element){
         var rand = Math.floor((Math.random()*6)+1).toString();	
         $(this).attr('value',rand);
@@ -9,11 +10,13 @@ $( document ).ready(function() {
     });     
 	numberOfDice = $('.nonselected').length
     $('.nonselected').on('click',function(e){	
+      $('#error').text(" ");
       $(this).toggleClass( 'selected')
     });     
 
     $('.edit_roll').on('click',function(e){
       e.preventDefault();
+      $('#error').text(" ");
       var url = $(this).attr("action")
       var array = []
       $('.selected').each(function(){
@@ -37,6 +40,7 @@ $( document ).ready(function() {
     ///when fetching new dice/////
     $('.new_dice').on('click', function(e){
       e.preventDefault	
+      $('#error').text(" ");
       if($('.nonselected').length == numberOfDice)
       {
         $('#error').text("You must score at least one dice per turn");

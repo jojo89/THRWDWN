@@ -33,7 +33,7 @@ padding: 0px 22px;
 }
 
 .container_dice {
-  margin: 20px auto;
+  margin: 45px auto;
   width: 950px;
 
   text-align: center;
@@ -61,8 +61,14 @@ font-size: 125px;
 
 .score_board {
   position: fixed;
-  right: 70px;
-  top: 50px;
+  right: 48px;
+  top: 110px;
+}
+
+#error {
+position: absolute;
+top: 50px;
+left: 367px;
 }
 
 .container input, .container_dice input {
