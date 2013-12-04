@@ -3,26 +3,29 @@
   <p id="you"><%= @next_player.name %>'s total is: <%= @next_player.points%></p>
 </div>
 <h2 id="points"><%= @roll.points%></h2>
+<h2 id="error"></h2>
 <h3 id="player_prompt">It's your turn <%= @score.name%></h3>
 <div class="container_dice">
   <div class="total">
  
   </div>
-  <% @dice.each do |d| %>
-  <%= image_tag(d.to_s + ".png", class:"nonselected",value:d)%>
-  <%end%>  
+  <div class="images">
+	  <% @dice.each do |d| %>
+	  <%= image_tag(d.to_s + ".png", class:"nonselected",value:d)%>
+	  <%end%>  
+  </div>	  
 
-  <%=form_for @roll,remote: true, url: game_score_roll_path(@game,@score,@roll), method: :patch do |f|%>
-    <%= f.submit %>
-  <%end%>
+	  <%=form_for @roll,remote: true, url: game_score_roll_path(@game,@score,@roll), method: :patch do |f|%>
+	    <%= f.submit %>
+	  <%end%>
 
-  <%=form_tag(game_score_roll_path(@game,@score,@roll),class:"new_dice", method: :get,remote: true) do %>
-    <%= submit_tag("Roll Again")%>
-  <%end%>
+	  <%=form_tag(game_score_roll_path(@game,@score,@roll),class:"new_dice", method: :get,remote: true) do %>
+	    <%= submit_tag("Roll Again")%>
+	  <%end%>
 
-  <%=form_tag(finish_path(@game,@score,@roll)) do %>
-    <%= hidden_field_tag("scored_points", false)%>
-    <%= submit_tag("Finish Turn")%>
+	  <%=form_tag(finish_path(@game,@score,@roll)) do %>
+	    <%= hidden_field_tag("scored_points", false)%>
+	    <%= submit_tag("Finish Turn")%>
   <%end%>
   <a id="cheat">cheat</a>
 </div>

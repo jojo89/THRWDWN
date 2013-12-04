@@ -39,7 +39,7 @@ $( document ).ready(function() {
       e.preventDefault	
       if($('.nonselected').length == numberOfDice)
       {
-        $('#points').text("You must score at least one dice per turn");
+        $('#error').text("You must score at least one dice per turn");
       }
       else
       {
@@ -48,7 +48,7 @@ $( document ).ready(function() {
       	if(numberOfDice == 0)
       	{
       	  $.get("/dice",null,function(response){
-            $('.container_dice').prepend(response);
+            $('.images').replaceWith(response);
             numberOfDice = $('.nonselected').length
             $('.nonselected').on('click',function(e){	
               $(this).toggleClass( 'selected')
