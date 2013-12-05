@@ -1,8 +1,12 @@
 
 <div class="container">
+<table>
+  <tr>
+  </tr>
 <% @games.each do |g|%>
   <% g.scores.each do |s|%>
     <%= s.name %>
   <%end%>
 <%end%>
+</table>
 </div>
