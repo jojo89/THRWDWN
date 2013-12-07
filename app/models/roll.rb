@@ -25,40 +25,16 @@ end
     array = array.collect{|s| s.to_i}
     freq = array.inject(Hash.new(0)) { |h,v| h[v] += 1; h }
     array = array.sort_by { |v| freq[v] }
+    last_number = array.last
     if array.last(3) == [1,1,1]
-      p self.points
       self.points = self.points + 1000
       p self.points
       array.pop(3)
       self.dice_left = self.dice_left - 3
       self.hot_dice = self.hot_dice + 3
       count_up(array)
-    elsif array.last(3) == [2,2,2]
-      self.points = self.points + 200
-      array.pop(3)
-      self.dice_left = self.dice_left - 3
-      self.hot_dice = self.hot_dice + 3
-      count_up(array)
-    elsif array.last(3) == [3,3,3]
-      self.points = self.points + 300
-      array.pop(3)
-      self.dice_left = self.dice_left - 3
-      self.hot_dice = self.hot_dice + 3
-      count_up(array)
-    elsif array.last(3) == [4,4,4]
-      self.points = self.points + 400
-      array.pop(3)
-      self.dice_left = self.dice_left - 3
-      self.hot_dice = self.hot_dice + 3
-      count_up(array)
-    elsif array.last(3) == [5,5,5]
-      self.points = self.points + 500
-      array.pop(3)
-      self.dice_left = self.dice_left - 3
-      self.hot_dice = self.hot_dice + 3
-      count_up(array)
-    elsif array.last(3) == [6,6,6]
-      self.points = self.points + 600
+    elsif array.last(3) == [last_number,last_number,last_number]
+      self.points = self.points + (last_number.to_s + "00").to_i
       array.pop(3)
       self.dice_left = self.dice_left - 3
       self.hot_dice = self.hot_dice + 3
