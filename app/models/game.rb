@@ -5,11 +5,11 @@ class Game < ActiveRecord::Base
 
     def winner
       array = []
-      self.scores.each do |s|
-        if s.points > array.first.points
-          array << s 
-        end	
-      end	
+      winner = self.scores[0].points <= self.scores[1].points
+      if winner
+        [self.scores[1],self.scores[0]]
+      else  
+        [self.scores[0],self.scores[1]]
+      end  
     end	
-
 end
