@@ -1,12 +1,20 @@
 
-<div class="container">
+<div class="container_stats">
 <table>
   <tr>
+    <th>winner</th>
+    <th>loser</th>
+    <th>Score</th>
   </tr>
 <% @games.each do |g|%>
-  <% g.scores.each do |s|%>
-    <%= s.name %>
-  <%end%>
+  <% game_array = g.winner%>
+  <tr>
+    <td><%= game_array[0].name %></td>
+    <td><%= game_array[1].name %></td>
+    <td><%= game_array[0].points%> - <%= game_array[1].points%></td>
+    
+  </tr>  
+
 <%end%>
 </table>
 </div>
