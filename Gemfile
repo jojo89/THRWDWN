@@ -9,7 +9,8 @@ gem 'pg'
 gem 'rspec-rails'
 gem 'selenium-webdriver'
 gem 'capybara'
-
+gem 'factory_girl_rails', "~> 4.0"
+gem 'shoulda-matchers'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
