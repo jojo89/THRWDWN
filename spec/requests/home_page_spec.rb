@@ -18,5 +18,7 @@ describe "Home_Page" do
       expect(page).to have_content("2000")
     end
 
+    
+
 	
 end
