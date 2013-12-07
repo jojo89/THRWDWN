@@ -1,7 +1,7 @@
 require 'spec_helper.rb'
 include RequestHelper
 
-describe "The Game Play" do
+describe "The Game Play",:js => true  do
 	it "should have content Your current total is: 0" do
       roll
       expect(page).to have_content("Your current total is: 0")
@@ -15,10 +15,8 @@ describe "The Game Play" do
 	it "should have six images" do
 	  roll
       first(".nonselected").click
-      
+      page.should have_css("img.selected")
 	end		
-
-
 
 
 end
