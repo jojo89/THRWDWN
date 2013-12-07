@@ -16,4 +16,9 @@ module RequestHelper
       click_button "Start Game"
 	end	
 
+	def roll
+      start_the_game
+      click_button "Roll!"
+	end	
+
 end
