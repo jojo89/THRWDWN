@@ -9,7 +9,6 @@ class Game < ActiveRecord::Base
         if s.points > array.first.points
           array << s 
         end	
-        
       end	
     end	
 
