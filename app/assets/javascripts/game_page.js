@@ -64,6 +64,7 @@ $( document ).ready(function() {
           var url = $(this).attr("action")
           $.get(url,null,function(response){
             $('.nonselected').each(function(index,element){
+              
               $(this).attr('value',response.dice[index]);
               $(this).attr('alt',response.dice[index]);
               $(this).attr('src',"/assets/" + response.dice[index]+ ".png");
