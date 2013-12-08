@@ -16,7 +16,7 @@
   </div>	  
 
 	  <%=form_for @roll,remote: true, url: game_score_roll_path(@game,@score,@roll), method: :patch do |f|%>
-	    <%= f.submit("Score Dice!") %>
+	    <%= f.submit(value:"Score Dice!") %>
 	  <%end%>
 
 	  <%=form_tag(game_score_roll_path(@game,@score,@roll),class:"new_dice", method: :get,remote: true) do %>
