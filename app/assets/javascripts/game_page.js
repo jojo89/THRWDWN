@@ -64,10 +64,33 @@ $( document ).ready(function() {
           var url = $(this).attr("action")
           $.get(url,null,function(response){
             $('.nonselected').each(function(index,element){
-              
+              if(response.dice[index]=="1")
+              {
+              var extension="1-16227445d1ca9296dae458aee6fdd365"
+              }  
+              else if(response.dice[index]=="2")
+              {
+              var extension = "2-7dea6c86173b48c853904a79446fa77a"
+              }
+              else if(response.dice[index]=="3")
+              {
+              var extension="3-d6132acd68d225b3c2ed6a78ef18966d"
+              }              
+              else if(response.dice[index]=="4")
+              {
+              var extension="4-c2576f2ac64889d520e64ef2dfe71dc0"
+              }
+              else if(response.dice[index]=="5")
+              {
+              var extension ="5-239cb74163ebe73a33539200aba0f210"
+              }              
+              else if(response.dice[index]=="6")
+              {
+              var extension="6-a69ae67146a8d67ad227d249f29b4fff"
+              }
               $(this).attr('value',response.dice[index]);
               $(this).attr('alt',response.dice[index]);
-              $(this).attr('src',"/assets/" + response.dice[index]+ ".png");
+              $(this).attr('src',"/assets/" + extension + ".png");
             }); 
           });
         }
