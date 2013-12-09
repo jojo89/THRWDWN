@@ -26,12 +26,16 @@ $( document ).ready(function() {
         $('#points').text(response.data);
         if(response.updated == false)
         {
-          
+          $('#error').text("That combination of dice doesn't score points");
         }
         else
         {
           $('#scored_points').val('true')
           $('.selected').remove();
+          if($('.nonselected').length== 0)
+          {
+            $('#error').text("Dice are hot roll again if you dare!");
+          }  
         }
       });
     });
