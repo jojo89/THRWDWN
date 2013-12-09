@@ -1,28 +1,9 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This App is a standard Farkle game. The game takes two players and the players can choose what score they want to play to. The user visits the app, chooses what score he wants to play to, and enters both players names. The first player begins by rolling the dice. The player can select the dice by clicking on the dice images and score the selected dice by submitting the "Score Dice" form. if the player scores all six dice, the dice will replenish when he roles again. When the player no longer wants to roll the dice he can pass the dice by clicking the finish turn button. The Game goes until one player reaches the finishing score. 
 
 Things you may want to cover:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* app is hosted at http://frkl.herokuapp.com/
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
